@@ -37,7 +37,8 @@ import { ModalComponent } from 'src/app/pages/modal/modal.component';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    ModalComponent
-  ]
+    ModalComponent,
+  ],
+
 })
 export class AuthLayoutModule { }

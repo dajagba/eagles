@@ -3,6 +3,8 @@
     margin-right: 5px;
     margin-bottom: 5px;
 }
-
-// html, body { height: 100%; }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-dialog-container {
+  background-color: transparent;
+  width: 250px;
+  height: 250px
+}

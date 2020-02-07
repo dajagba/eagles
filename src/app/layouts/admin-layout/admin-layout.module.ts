@@ -12,6 +12,15 @@ import { MapsComponent } from '../../pages/maps/maps.component';
 import { UserProfileComponent } from '../../pages/user-profile/user-profile.component';
 import { TablesComponent } from '../../pages/tables/tables.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from 'src/app/pages/modal/modal.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -21,15 +30,27 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatSliderModule,
+    MatInputModule,
+    MatMomentDateModule,
+    MatIconModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    AngularMultiSelectModule
   ],
   declarations: [
     DashboardComponent,
     UserProfileComponent,
     TablesComponent,
     IconsComponent,
-    MapsComponent
-  ]
+    MapsComponent,
+    ModalComponent
+  ],
+  exports: [ModalComponent],
+  entryComponents: [ModalComponent],
 })
 
 export class AdminLayoutModule {}
