@@ -34,6 +34,7 @@
                   <option value="" disabled>Category</option>
                   <option>Giving Back</option>
                   <option>Research</option>
+                  <option>Project</option>
                 </select>
               </div>
             </div>
@@ -77,20 +78,6 @@
             </div>
 
             <div class="form-group">
-              <div class="input-group input-group-alternative">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"
-                    ><i class="ni ni-pin-3"></i
-                  ></span>
-                </div>
-                <select class="form-control">
-                  <option  value="" disabled>Location</option>
-                  <option>1 New York Plaza</option>
-                  <option>1585 Broadway</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
               <angular2-multiselect [data]="itemList"
               [(ngModel)]="selectedItems"
               [settings]="settings"
@@ -102,6 +89,21 @@
               style="width: auto%;"
               >
         </angular2-multiselect>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    >Project Description
+                  </span>
+                </div>
+                <textarea matInput class="form-control"
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="5"> </textarea>
+              </div>
             </div>
             <div class="text-center">
               <button type="button" class="btn btn-primary mt-4">

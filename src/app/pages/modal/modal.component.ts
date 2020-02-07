@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, NgZone } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { CdkTextareaAutosize } from '@angular/cdk/text-field';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-modal',
@@ -9,13 +11,20 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
+  @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
   itemList = [];
   selectedItems = [];
   settings = {};
   requestForm: FormGroup;
-  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<ModalComponent>) {
+  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<ModalComponent>, private _ngZone: NgZone) {
     this.createForm();
+  }
+
+  triggerResize() {
+    // Wait for changes to be applied, then trigger textarea resize.
+    this._ngZone.onStable.pipe(take(1))
+        .subscribe(() => this.autosize.resizeToFitContent(true));
   }
 
   createForm() {
